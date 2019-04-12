@@ -1,11 +1,16 @@
 <?php
   // PART: Settings
   function ex_module_settings($return) {
+    $output = '';
     if($return == 'id') {
       $output = get_sub_field('module_id');
     } elseif($return == 'class') {
-      $output = 'module-color-' . get_sub_field('module_color');
-      $output .= ' module-pad-' . get_sub_field('module_padding');
+      if(get_row_layout() == 'hero_image') {
+        $output .= ' animate-parallax animate-z-normal';
+      } else {
+        $output .= ' module-color-' . get_sub_field('module_color');
+        $output .= ' module-pad-' . get_sub_field('module_padding');
+      }
     }
     return $output;
   }
