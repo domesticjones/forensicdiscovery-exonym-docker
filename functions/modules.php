@@ -11,8 +11,12 @@
   }
 
   // PART: Call to Action
-  function ex_module_cta() {
-    $output = 'asdf';
+  function ex_module_cta($row = 'call_to_actions') {
+    $output = '';
+    if(have_rows($row)): while(have_rows($row)): the_row();
+      $link = get_sub_field('link');
+      $output = '<a href="' . $link['url'] . '" target="' . $link['target'] . '" class="button">' . $link['title'] . '</a>';
+    endwhile; endif;
     return $output;
   }
 ?>
