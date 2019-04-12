@@ -1,35 +1,10 @@
+
 /**
-  Link Coloring in all States
+  Column Width
   ---------------------------------------------------------------------- */
-@mixin linkArrayStatic($color: inherit, $el: a) {
-  #{$el},
-  #{$el}:link,
-  #{$el}:visited {
-    color: $color;
-  }
-}
-
-@mixin linkArrayHover($color: inherit, $el: a) {
-  #{$el}:hover,
-  #{$el}:focus,
-  #{$el}:active {
-    color: $color;
-  }
-}
-
-@mixin linkColor($color: inherit, $state: all, $el: a) {
-  @if $state == all {
-    @include linkArrayStatic();
-    @include linkArrayHover();
-  }
-
-  @else if $state == static {
-    @include linkArrayStatic();
-  }
-
-  @else if $state == hover {
-    @include linkArrayHover();
-  }
+@mixin columnWidth($number, $operator: width) {
+  $calc: ($number/14) * 100;
+  #{$operator}: #{$calc}vw;
 }
 
 /**

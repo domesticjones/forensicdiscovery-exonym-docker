@@ -19,7 +19,7 @@
 								'depth' => 1,							              // limit the depth of the nav
 								'fallback_cb' => ''						          // fallback function
 							)); ?>
-							<p class="copyright">&copy; Copyright <?php ex_brand('legal'); ?></p>
+							<p class="copyright">&copy; <?php echo date('Y') . ' '; ex_brand('legal'); ?></p>
 						</nav>
 					</section>
 					<section class="footer-right">

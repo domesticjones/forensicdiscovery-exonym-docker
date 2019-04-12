@@ -21,6 +21,20 @@ export default {
     })
   },
   finalize() {
+    // FIELDS: Input Field Label Focus
+    $('input, textarea').on('focus', e => {
+      const $this = $(e.currentTarget);
+      $this.closest('.form-row').find('label').addClass('is-active');
+      $this.closest('.form-row').find('.wpcf7-not-valid-tip').fadeOut();
+    });
+    $('input, textarea').on('focusout', e => {
+      const $this = $(e.currentTarget);
+      $this.closest('.form-row').find('label').removeClass('is-active');
+    });
+    $('.wpcf7-not-valid-tip').on('click', e => {
+      $('body').fadeOut();
+    });
+
   	// MODULES: Parallax
   	$(window).on('load resize scroll', () => {
   		const d_scroll = $(window).scrollTop();

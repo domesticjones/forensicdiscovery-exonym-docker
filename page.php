@@ -5,7 +5,7 @@
 			echo '<article class="page-content">';
 				while(have_rows('content_builder')): the_row();
 					$contentModule = get_row_layout();
-					echo '<section class="module module-' . $contentModule . ex_module_settings('class') . '">';
+					echo '<section class="module module-' . $contentModule . ex_module_settings('class') . '"><div class="wrap">';
 						if(ex_module_settings('id')) { echo '<a href="#" name="' . ex_module_settings('id') . '"></a>'; }
 						if(get_row_layout() == 'data_tiles') {
 							get_template_part('modules/tiles');
@@ -20,7 +20,7 @@
 						} elseif(get_row_layout() == 'two_column') {
 							get_template_part('modules/twocol');
 						}
-					echo '</section>';
+					echo '</div></section>';
 				endwhile;
 			echo '</article>';
 		endif;

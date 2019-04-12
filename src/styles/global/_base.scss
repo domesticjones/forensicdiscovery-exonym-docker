@@ -7,8 +7,8 @@ body {
 }
 
 .wrap {
+  @include columnWidth(12);
   margin: 0 auto;
-  max-width: 100%;
   position: relative;
 }
 
@@ -33,26 +33,4 @@ a {
 
 .alignright {
   margin: 1em 0 1em 1em;
-}
-
-/**
-  Responsive Breakpoints
-  ---------------------------------------------------------------------- */
-@media (min-width: 1025px) {
-  .wrap {
-    width: 1150px;
-  }
-}
-
-@media (min-width: 1400px) {
-  .wrap {
-    width: 1400px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .wrap {
-    width: 100%;
-    padding: 0 2rem;
-  }
 }

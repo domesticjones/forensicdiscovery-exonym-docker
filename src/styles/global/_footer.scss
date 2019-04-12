@@ -1,10 +1,154 @@
 /**
   Global Website Footer
   ---------------------------------------------------------------------- */
+#footer {
+  @include columnWidth(0.5, padding-top);
+  @include columnWidth(1, padding-bottom);
+  background-color: $black;
+  color: $white;
+
+  .wrap {
+    @include grid(space-between, stretch);
+  }
+}
+
+.footer-left {
+  @include grid(space-between, flex-start, column);
+  @include columnWidth(3);
+  @include columnWidth(1, margin-left);
+
+  img {
+    display: block;
+    @include columnWidth(2);
+    margin-bottom: 2em;
+  }
+
+  .nav-phone,
+  .nav-email {
+    margin-bottom: 0.5em;
+
+    ul {
+      @include listStripped();
+
+      li {
+        line-height: 1;
+      }
+
+      .name {
+        display: none;
+      }
+    }
+
+    a {
+      display: block;
+      color: $white;
+      transform-origin: left;
+      @include transition();
+
+      &:hover {
+        color: $orange;
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .nav-phone {
+    @include fontBold();
+    font-size: 2em;
+  }
+}
+
 .nav-footer {
-  @include navMenu(vertical);
+  @include navMenu(horizontal);
+  @include grid();
+  color: $grey;
+  font-size: 0.75em;
+  margin-top: auto;
+  padding-top: 2em;
+  color: $grey;
+
+  a {
+    @include fontItalic();
+    color: $grey;
+    @include transition();
+
+    &:hover {
+      color: $orange;
+    }
+  }
+
+  .menu {
+    padding-right: 1em;
+
+    &::after {
+      content: '|';
+      display: inline;
+      padding-left: 1em;
+    }
+  }
+
+  p {
+    padding-bottom: 0;
+  }
+}
+
+.footer-right {
+  @include columnWidth(6);
+  @include columnWidth(1, margin-right);
 }
 
 /**
   Responsive Breakpoints
   ---------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .footer-left {
+    font-size: 0.75em;
+  }
+
+  .footer-right {
+    @include columnWidth(7);
+  }
+}
+
+@media (max-width: 1024px) {
+  #footer .wrap {
+    @include grid(center, center, column);
+  }
+
+  .footer-left {
+    @include grid(center, center, column);
+    text-align: center;
+    margin-left: 0;
+    @include columnWidth(10);
+    @include columnWidth(0.5, margin-bottom);
+
+    .nav-phone a,
+    .nav-email a {
+      transform-origin: center;
+    }
+
+    img {
+      @include columnWidth(4);
+    }
+  }
+
+  .footer-right {
+    margin: 0 auto;
+    @include columnWidth(10);
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-left,
+  .footer-right {
+    width: 100%;
+  }
+
+  .wpcf7-form {
+    @include grid(center, center, column);
+  }
+
+  .form-column {
+    width: 100%;
+  }
+}
