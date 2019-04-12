@@ -17,9 +17,8 @@ body {
   ---------------------------------------------------------------------- */
 a {
   text-decoration: none;
+  color: $orange;
 }
-
-@include linkColor($blue, all);
 
 /**
   Wordpress Image ALignment

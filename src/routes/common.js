@@ -11,6 +11,14 @@ export default {
   		const $this = $(e.currentTarget);
   		$this.toggleClass('is-active');
   	});
+
+    // NAV: Scroll to Contact Section
+    $('a[href="#contact"]').click(e => {
+      e.preventDefault();
+      $('html, body').animate({
+        scrollTop: $('#footer').offset().top - 20
+      }, 1666);
+    })
   },
   finalize() {
   	// MODULES: Parallax
