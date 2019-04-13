@@ -1,0 +1,130 @@
+.module-hero_image {
+  color: $white;
+  text-align: center;
+  font-size: 1.25em;
+
+  .wrap {
+    @include grid(center, center, column);
+    @include columnWidth(1, padding);
+
+    & > *:not(.module-bg):not(.hero-footnote) {
+      @include columnWidth(8, max-width);
+    }
+  }
+}
+
+.hero-heading {
+  margin-bottom: 1em;
+}
+
+.hero-columns {
+  @include grid();
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+    background-color: $white;
+  }
+}
+
+.hero-column-left,
+.hero-column-right {
+  width: 50%;
+  padding: 1.5em;
+  font-size: 0.85em;
+
+  & > *:last-child {
+    padding-bottom: 0;
+    margin: 0;
+  }
+}
+
+.hero-column-left {
+  text-align: right;
+}
+
+.hero-column-right {
+  text-align: left;
+}
+
+.hero-footnote {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  background-color: $orange;
+  font-size: 0.75em;
+  padding: 2em;
+  transform: translateX(-50%);
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    height: calc(100% + 1px);
+    width: 5em;
+    background-color: $orange;
+  }
+
+  &::before {
+    right: calc(100% - 1px);
+    clip-path: polygon(100% 100%, 100% 0, 0 100%);
+  }
+
+  &::after {
+    left: calc(100% - 1px);
+    clip-path: polygon(100% 100%, 0 0, 0 100%);
+  }
+
+  &-color-white { background-color: $grey; color: $black; &::before, &::after { background-color: $grey; }}
+  &-color-smoke { background-color: $grey; color: $black; &::before, &::after { background-color: $grey; }}
+}
+
+@media (max-width: 1280px) {
+  .module-hero_image .wrap {
+    padding: 3em 0 6em;
+
+    & > *:not(.module-bg):not(.hero-footnote) {
+      max-width: 100%;
+    }
+  }
+
+  .hero-footnote {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .module-hero_image .wrap {
+    padding: 3em 0 0 0;
+  }
+
+  .hero-footnote {
+    position: relative;
+    margin-top: 2em;
+  }
+}
+
+
+@media (max-width: 660px) {
+  .hero-columns {
+    @include grid(center, center, column);
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .hero-column-left,
+  .hero-column-right {
+    width: 100%;
+    text-align: center;
+  }
+}

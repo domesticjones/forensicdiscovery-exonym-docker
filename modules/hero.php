@@ -4,7 +4,7 @@
   $headingSub = get_sub_field('sub_heading');
   $columnLeft = get_sub_field('left_column');
   $columnRight = get_sub_field('right_column');
-  $footColor = get_sub_field('footnote_color');
+  $footColor = get_sub_field('footnote_color_module_color');
   $footnote = get_sub_field('footnote');
 ?>
 <?php if($bg): ?>
@@ -19,7 +19,6 @@
     <?php if($columnLeft): ?>
       <div class="hero-column-left"><?php echo $columnLeft; ?></div>
     <?php endif; ?>
-    <?php if($columnLeft && $columnRight) { echo '<div class="hero-column-border"></div>'; } ?>
     <?php if($columnRight): ?>
       <div class="hero-column-right"><?php echo $columnRight; ?></div>
     <?php endif; ?>
