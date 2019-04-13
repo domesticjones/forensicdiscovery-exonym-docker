@@ -11,27 +11,31 @@
     <span><?php echo $heading; ?></span>
   </h2>
   <?php
-    if($paragraph) { echo '<p class="tiles-paragraph">' . $paragraph . '</p>'; }
+    if($paragraph) { echo '<div class="tiles-paragraph">' . $paragraph . '</div>'; }
     if(have_rows('tiles')) {
       echo '<div class="tiles-wrap">';
         echo '<h3>' . $name . '</h3>';
-        if($search) { echo '<input class="live-search" type="search" placeholder="Search through ' . $name . ' below">'; }
+        if($search) { echo '<div class="live-search"><input type="search" placeholder="Filter through ' . $name . ' below"></div>'; }
         echo '<ul>';
           while(have_rows('tiles')) {
             the_row();
             $icon = get_sub_field('icon');
+            $iconClass = '';
+            if(empty($icon)) { $iconClass = ' noicon'; }
             $data = get_sub_field('data');
             $color = $data['color'];
             if($color) {
-              $colorStyle = ' class="tile-colored" style="background-color: ' . $color . '"';
+              $colorStyle = ' class="tile tile-colored' . $iconClass . '" style="background-color: ' . $color . '"';
             } else {
-              $colorStyle = ' class="tile-transparent"';
+              $colorStyle = ' class="tile-transparent' . $iconClass . '"';
             }
             echo '<li' . $colorStyle . '>';
-              if($icon) { echo '<img src="' . $icon['sizes']['small'] . '" alt="' . $icon['title'] . '" />'; }
-              if($data['title']) { echo '<strong>' . $data['title'] . '</strong>'; }
-              if($data['sub_title']) { echo '<span>' . $data['sub_title'] . '</span>'; }
-              if($data['category']) { echo '<em>' . $data['category'] . '</em>'; }
+              if($icon) { echo '<img src="' . $icon['sizes']['small'] . '" alt="' . $icon['title'] . '" class="tile-icon" />'; }
+              echo '<div class="tile-text">';
+                if($data['title']) { echo '<strong>' . $data['title'] . '</strong>'; }
+                if($data['sub_title']) { echo '<span>' . $data['sub_title'] . '</span>'; }
+                if($data['category']) { echo '<em>' . $data['category'] . '</em>'; }
+              echo '</div>';
             echo '</li>';
           }
         echo '</ul>';

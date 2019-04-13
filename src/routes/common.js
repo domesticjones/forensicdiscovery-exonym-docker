@@ -37,6 +37,16 @@ export default {
       $('body').fadeOut();
     });
 
+    // MODULE: Tile Search
+    $('.live-search input').on('keyup', e => {
+      const $this = $(e.currentTarget);
+      const value = $this.val().toLowerCase();
+      $('.tiles-wrap .tile').filter((i,e) => {
+        const $this = $(e);
+        $this.toggle($this.text().toLowerCase().indexOf(value) > -1);
+      });
+    });
+
   	// MODULES: Parallax
   	$(window).on('load resize scroll', () => {
   		const d_scroll = $(window).scrollTop();

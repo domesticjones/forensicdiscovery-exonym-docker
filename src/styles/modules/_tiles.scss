@@ -1,0 +1,138 @@
+.tiles-heading {
+  @include grid(center, center);
+  @include columnWidth(6);
+  margin: 0 auto 2em;
+
+  img {
+    margin-right: 0.5em;
+  }
+}
+
+.tiles-paragraph {
+  @include columnWidth(6);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.tiles-wrap {
+  text-align: center;
+  position: relative;
+  margin-top: 2em;
+  padding-top: 2em;
+
+  &::before {
+    content: '';
+    display: block;
+    @include columnWidth(2);
+    height: 1px;
+    background-color: $black;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    @include columnWidth(-1, margin-left);
+  }
+
+  ul {
+    @include listStripped();
+    @include grid(center, stretch, row, wrap);
+
+    li {
+      @include grid(center, center);
+      margin: 0.5em;
+      border-radius: 5px;
+      padding: 0.75em;
+      color: $white;
+      text-align: left;
+
+      &.noicon {
+        text-align: center;
+      }
+
+      strong,
+      span,
+      em {
+        width: 100%;
+        display: block;
+        line-height: 1.25;
+      }
+
+      span {
+        font-sie: 0.85em;
+      }
+
+      em {
+        font-size: 0.75em;
+        max-width: 16em;
+      }
+
+      img {
+        display: block;
+        margin-right: 0.75em;
+        max-width: 4em;
+        height: 4em;
+      }
+
+      &.tile-transparent {
+        color: $black;
+      }
+    }
+  }
+}
+
+.live-search {
+  @include columnWidth(4);
+  margin: 0 auto 2em;
+  position: relative;
+
+  input {
+    border-color: $black;
+
+    &:focus {
+      border-color: $orange;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0.675em;
+    right: 0.675em;
+    display: block;
+    width: 1.25em;
+    height: 1.25em;
+    @include icon(search);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
+
+@media (max-width: 1400px) {
+  .live-search {
+    @include columnWidth(6);
+  }
+}
+
+@media (max-width: 1280px) {
+  .tiles-heading,
+  .tiles-paragraph {
+    @include columnWidth(8);
+  }
+}
+
+@media (max-width: 1024px) {
+  .live-search {
+    @include columnWidth(8);
+  }
+
+  .tiles-heading,
+  .tiles-paragraph {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .live-search {
+    width: 100%;
+  }
+}
