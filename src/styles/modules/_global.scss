@@ -1,0 +1,10 @@
+.module {
+  overflow: hidden;
+}
+
+.module-bg {
+  position: absolute;
+  z-index: -1;
+  @include columnWidth(-1, left);
+  width: 100vw;
+}

@@ -1,57 +1,114 @@
 /**
   Global Website Header
   ---------------------------------------------------------------------- */
-.header-top {
-  padding: 1rem 0;
-  z-index: 9999;
+#header {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
   width: 100%;
   background-color: $white;
+  padding: 1vw 0;
 
-  .wrap {
-    @include grid(space-between, center);
-  }
-
-  .nav-social {
-    ul {
-      @include listStripped();
-      @include grid();
-
-      li {
-        margin: 0 0.5em;
-      }
-
-      a,
-      img {
-        display: block;
-        height: 2em;
-      }
-
-      span {
-        display: none;
-      }
-    }
-  }
+  @include clearfix();
 }
 
 .logo-header {
   display: block;
-  height: 2.5rem;
+  @include columnWidth(2);
+  padding-right: 1em;
+  position: absolute;
+  background-color: $white;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -2.5em;
+    right: 0;
+    height: 100%;
+    @include columnWidth(3);
+    background-color: $white;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    @include columnWidth(1);
+    height: calc(100% + 2.5em);
+    background-color: $white;
+    clip-path: polygon(100% 0, 0 0, 0 100%);
+  }
+
+  img {
+    transform: translateY(0.25em);
+  }
+}
+
+.nav-header {
+  @include navMenu(dropdown);
+  float: right;
+
+  a {
+    padding: 1em;
+    color: $black;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 1em;
+      width: 1em;
+      border-radius: 5px;
+      background-color: $orange;
+      opacity: 0;
+      transform: translate(-50%, -0.5em);
+      transform-origin: bottom;
+      @include transition();
+    }
+
+    &:hover::before {
+      width: 50%;
+      height: 1px;
+      opacity: 1;
+      transform: translate(-50%, 1em);
+    }
+  }
+
+  li:last-child a {
+    padding-right: 0;
+
+    &::before {
+      left: calc(50% + 1em);
+    }
+  }
+
+  .current-menu-item {
+    @include fontBold();
+  }
 }
 
 #responsive-nav-toggle {
+  @include hamburgerMenu(9, $black, 0.75);
   display: none;
 }
 
 /**
   Responsive Breakpoints
   ---------------------------------------------------------------------- */
-@media (max-width: 1024px) {
-  .header-top {
-    padding: 1rem;
+@media (min-width: 1025px) {
+  body {
+    padding-top: 5.5em;
   }
+}
 
-  .nav-header,
-  .header-top .nav-social {
+@media (max-width: 1024px) {
+  .nav-header {
     display: none;
   }
 
