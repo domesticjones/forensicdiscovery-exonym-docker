@@ -1,0 +1,27 @@
+#nav-responsive {
+  @include navMenu(vertical);
+  position: fixed;
+  z-index: 9998;
+  top: 4em;
+  width: 100%;
+  background-color: $orange;
+  @include columnWidth(1, padding);
+  text-align: right;
+  transform: translateY(-100%);
+  @include transition();
+
+  &.is-active {
+    transform: translateY(0);
+  }
+
+  a {
+    font-size: 1.25em;
+    display: block;
+    color: $black;
+    padding: 0.5em 0;
+  }
+
+  .current-menu-item  {
+    @include fontBold();
+  }
+}
