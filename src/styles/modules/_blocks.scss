@@ -1,0 +1,60 @@
+.blocks-row {
+  @include listStripped();
+  @include grid(space-between, flex-start, row, wrap);
+  @include columnWidth(1, padding-left);
+  @include columnWidth(1, padding-right);
+  font-size: 0.85em;
+  text-align: center;
+
+  li {
+    @include grid(center, center, column);
+    @include columnWidth(2);
+
+    &:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.block-icon {
+  @include grid(center, flex-end);
+  @include columnWidth(1, height);
+  padding-bottom: 1.5em;
+
+  img {
+    display: block;
+  }
+}
+
+@media (max-width: 1400px) {
+  .blocks-row {
+    padding: 0;
+
+    li {
+      @include columnWidth(2.5);
+    }
+  }
+
+  .block-icon {
+    @include columnWidth(2, height);
+  }
+}
+
+@media (max-width: 1024px) {
+  .blocks-row li {
+    @include columnWidth(5);
+    margin-bottom: 2em;
+  }
+}
+
+@media (max-width: 768px) {
+  .blocks-row li {
+    width: 100%;
+    margin-bottom: 4em;
+  }
+
+  .block-icon {
+    height: auto;
+  }
+}
