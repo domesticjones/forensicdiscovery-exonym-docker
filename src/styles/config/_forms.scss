@@ -234,7 +234,7 @@ input[type="image"] {
   @include grid(center, center);
   @include fontItalic();
   appearance: none;
-  font-size: 1.25em;
+  font-size: 1.15em;
   width: $fh-button-width;
   max-width: $fh-button-max-width;
   line-height: 1;
@@ -314,7 +314,7 @@ input[type="reset"]:focus {
   transform: scale(1.05);
 
   &::before {
-    transform: translateX(1000%) scale(0);
+    transform: translateX(300%) scale(0);
     opacity: 0;
     @include transition(all 200ms cubic-bezier(0.6, -0.28, 0.735, 0.045));
   }

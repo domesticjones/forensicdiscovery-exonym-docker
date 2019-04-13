@@ -1,0 +1,66 @@
+.module-two_column .wrap {
+  @include grid(center);
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background-color: $white;
+  }
+}
+
+.twocol-left,
+.twocol-right {
+  @include columnWidth(5);
+  padding: 2em 0;
+
+  & > *:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+}
+
+.twocol-left {
+  @include columnWidth(0.5, padding-right);
+  text-align: right;
+
+  a.button {
+    float: right;
+  }
+}
+
+.twocol-right {
+  @include columnWidth(0.5, padding-left);
+}
+
+@media (max-width: 1400px) {
+  .twocol-left,
+  .twocol-right {
+    @include columnWidth(6);
+  }
+}
+
+@media (max-width: 1024px) {
+  .module-two_column .wrap {
+    @include grid(center, center, column);
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .twocol-left,
+  .twocol-right {
+    width: 100%;
+    padding: 0;
+    text-align: inherit;
+  }
+
+  .twocol-left {
+    @include columnWidth(1, margin-bottom);
+  }
+}
