@@ -14,3 +14,11 @@
     display: none;
   }
 }
+
+.module-color-white {background-color: $white; color: $black; }
+.module-color-smoke {background-color: $grey; color: $black; }
+.module-color-charcoal {background-color: $black; color: $white; }
+
+.module-pad-small { @include columnWidth(0.25, padding-top); @include columnWidth(0.25, padding-bottom); }
+.module-pad-medium { @include columnWidth(0.5, padding-top); @include columnWidth(0.5, padding-bottom); }
+.module-pad-large { @include columnWidth(0.75, padding-top); @include columnWidth(0.75, padding-bottom); }
