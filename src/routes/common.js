@@ -1,5 +1,7 @@
+import $ from 'jquery';
+window.$ = window.jQuery = $;
 require('jquery-visible');
-const $ = jQuery;
+require('slick-carousel');
 
 export default {
   init() {
@@ -20,6 +22,7 @@ export default {
       $('html, body').animate({
         scrollTop: $('#footer').offset().top - 20
       }, 1666);
+      $('#nav-responsive, #responsive-nav-toggle').removeClass('is-active');
     })
   },
   finalize() {
@@ -45,6 +48,23 @@ export default {
         const $this = $(e);
         $this.toggle($this.text().toLowerCase().indexOf(value) > -1);
       });
+    });
+
+    // MODULE: Hero Image
+    $('.hero-slide-wrap').slick({
+      arrows: false,
+      fade: true,
+      autoplay: true,
+      autoplaySpeed: 8000,
+      speed: 1500,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            adaptiveHeight: true,
+          },
+        },
+      ],
     });
 
   	// MODULES: Parallax

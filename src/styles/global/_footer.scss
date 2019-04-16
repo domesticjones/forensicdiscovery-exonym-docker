@@ -139,9 +139,17 @@
 }
 
 @media (max-width: 600px) {
+  #footer {
+    padding-top: 3em;
+  }
+
   .footer-left,
   .footer-right {
     width: 100%;
+
+    img {
+      @include columnWidth(8);
+    }
   }
 
   .wpcf7-form {

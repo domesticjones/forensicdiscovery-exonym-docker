@@ -25,3 +25,9 @@
     @include fontBold();
   }
 }
+
+@media (min-width: 1025px) {
+  #nav-responsive {
+    display: none;
+  }
+}

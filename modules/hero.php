@@ -1,5 +1,10 @@
 <?php
+  if(have_rows('hero_slider')):
+    echo '<div class="hero-slide-wrap">';
+    while(have_rows('hero_slider')): the_row();
+      echo '<div class="hero-slide">';
   $bg = get_sub_field('background');
+  $darken = get_sub_field('darken_image') / 100;
   $heading = get_sub_field('heading');
   $headingSub = get_sub_field('sub_heading');
   $columnLeft = get_sub_field('left_column');
@@ -8,7 +13,7 @@
   $footnote = get_sub_field('footnote');
 ?>
 <?php if($bg): ?>
-  <div class="module-bg" style="background-image: url(<?php echo $bg['sizes']['jumbo']; ?>);">
+  <div class="module-bg" style="background-image: url(<?php echo $bg['sizes']['jumbo']; ?>); opacity: <?php echo $darken; ?>;">
     <img src="<?php echo $bg['sizes']['jumbo']; ?>" alt="<?php echo $bg['title']; ?>" />
   </div>
 <?php endif; ?>
@@ -24,4 +29,10 @@
     <?php endif; ?>
   </div>
 <?php endif; ?>
-<?php if($footnote) { echo '<div class="hero-footnote hero-footnote-color-' . $footColor . '">' . $footnote . '</div>'; } ?>
+<?php
+  if($footnote) { echo '<div class="hero-footnote hero-footnote-color-' . $footColor . '">' . $footnote . '</div>'; }
+    echo '</div>';
+  endwhile;
+  echo '</div>';
+endif;
+?>

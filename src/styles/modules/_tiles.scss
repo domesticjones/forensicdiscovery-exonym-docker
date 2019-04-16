@@ -56,6 +56,10 @@
         line-height: 1.25;
       }
 
+      strong {
+        font-size: 1.15em;
+      }
+
       span {
         font-sie: 0.85em;
       }
@@ -134,5 +138,28 @@
 @media (max-width: 768px) {
   .live-search {
     width: 100%;
+  }
+
+  .tiles-heading {
+    margin-bottom: 1em;
+  }
+}
+
+@media (max-width: 520px) {
+  .tiles-wrap ul li {
+    @include grid(center, center, column);
+    margin: 0.375em;
+    width: calc(50% - 0.75em);
+    text-align: center;
+
+    img {
+      margin-right: 0;
+      margin-bottom: 0.5em;
+    }
+
+    &.noicon {
+      width: 100%;
+      margin: 0.375em 0;
+    }
   }
 }
