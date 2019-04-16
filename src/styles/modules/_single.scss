@@ -1,0 +1,32 @@
+.module-single_column {
+  .wrap {
+    @include columnWidth(3, padding-left);
+    @include columnWidth(3, padding-right);
+
+    & > *:last-child {
+      padding-bottom: 0;
+      margin: 0;
+    }
+  }
+
+  *:not(.button) {
+    font-size: 1.25em;
+  }
+}
+
+@media (max-width: 1024px) {
+  .module-single_column {
+    .wrap {
+      @include columnWidth(1, padding-left);
+      @include columnWidth(1, padding-right);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .module-single_column {
+    .wrap {
+      padding: 0;
+    }
+  }
+}

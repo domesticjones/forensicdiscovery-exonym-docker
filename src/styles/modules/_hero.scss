@@ -13,10 +13,12 @@
 
 .hero-heading {
   margin-bottom: 1em;
+  margin-top: auto;
 }
 
 .hero-slide {
   @include columnWidth(1, padding);
+  @include columnWidth(10, max-width);
 }
 
 .hero-columns {
@@ -74,6 +76,7 @@
   font-size: 0.75em;
   padding: 2em;
   transform: translateX(-50%);
+  margin-top: auto;
 
   &::before,
   &::after {
@@ -98,7 +101,7 @@
 
   &-color-white { background-color: $white; color: $black; &::before, &::after { background-color: $white; }}
   &-color-smoke { background-color: $grey; color: $black; &::before, &::after { background-color: $grey; }}
-  &-color-charcoal { background-color: $black; color: $white; &::before, &::after { background-color: $white; }}
+  &-color-charcoal { background-color: $black; color: $white; &::before, &::after { background-color: $black; }}
 }
 
 @media (max-width: 1280px) {
@@ -117,11 +120,16 @@
     @include grid(center, center, column);
     display: flex !important;
     padding-bottom: 0;
+    max-width: 100%;
     min-height: calc(100vh - 4em);
 
     .module-bg {
       transform: none !important;
     }
+  }
+
+  .hero-heading {
+    margin-bottom: auto;
   }
 
   .hero-footnote {

@@ -1,16 +1,21 @@
-.module-two_column .wrap {
-  @include grid(center);
+.module-two_column {
+  .wrap {
+    @include grid(center);
 
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 50%;
-    top: 0;
-    width: 1px;
-    height: 100%;
-    background-color: $white;
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 1px;
+      height: 100%;
+    }
   }
+
+  &.module-color-white { .wrap::after { background-color: $black; }}
+  &.module-color-smoke { .wrap::after { background-color: $black; }}
+  &.module-color-charcoal { .wrap::after { background-color: $grey; }}
 }
 
 .twocol-left,
@@ -35,6 +40,10 @@
 
 .twocol-right {
   @include columnWidth(0.5, padding-left);
+
+  a.button {
+    float: left;
+  }
 }
 
 @media (max-width: 1400px) {
