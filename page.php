@@ -13,8 +13,6 @@
 							get_template_part('modules/blocks');
 						} elseif(get_row_layout() == 'hero_image') {
 							get_template_part('modules/hero');
-						} elseif(get_row_layout() == 'quote') {
-							get_template_part('modules/quote');
 						} elseif(get_row_layout() == 'single_column') {
 							get_template_part('modules/single');
 						} elseif(get_row_layout() == 'two_column') {
