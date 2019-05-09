@@ -4,14 +4,14 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7618bd4c97f1e79ead11d659886d8c90",
+    "content-hash": "423dc9635898f4fee03910bbd47f0821",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
-            "version": "5.7.13",
+            "version": "5.8.0",
             "dist": {
                 "type": "zip",
-                "url": "https://connect.advancedcustomfields.com/index.php?p=pro&a=download&t=5.7.13",
+                "url": "https://connect.advancedcustomfields.com/index.php?p=pro&a=download&t=5.8.0",
                 "reference": null,
                 "shasum": null
             },
@@ -308,15 +308,15 @@
         },
         {
             "name": "wpackagist-plugin/admin-menu-editor",
-            "version": "1.8.8",
+            "version": "1.9",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/admin-menu-editor/",
-                "reference": "tags/1.8.8"
+                "reference": "tags/1.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/admin-menu-editor.1.8.8.zip",
+                "url": "https://downloads.wordpress.org/plugin/admin-menu-editor.1.9.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -368,15 +368,15 @@
         },
         {
             "name": "wpackagist-plugin/disable-gutenberg",
-            "version": "1.7",
+            "version": "1.8.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/disable-gutenberg/",
-                "reference": "tags/1.7"
+                "reference": "tags/1.8.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/disable-gutenberg.1.7.zip",
+                "url": "https://downloads.wordpress.org/plugin/disable-gutenberg.1.8.1.zip",
                 "reference": null,
                 "shasum": null
             },
