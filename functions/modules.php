@@ -9,8 +9,11 @@
         $output .= ' animate-parallax animate-z-normal';
       } else {
         $output .= ' module-color-' . get_sub_field('module_color');
-        $output .= ' module-pad-' . get_sub_field('module_padding');
+        $output .= ' module-fontsize-' . get_sub_field('module_font_size');
       }
+    } elseif($return == 'style') {
+      $pad = get_sub_field('module_padding');
+      $output .= ' padding-top: ' . $pad . 'vw; padding-bottom: ' . $pad . 'vw;';
     }
     return $output;
   }

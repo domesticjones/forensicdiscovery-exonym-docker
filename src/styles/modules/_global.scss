@@ -26,13 +26,13 @@
   z-index: -1;
 }
 
-.module-color-white {background-color: $white; color: $black; }
-.module-color-smoke {background-color: $grey; color: $black; }
-.module-color-charcoal {background-color: $black; color: $white; }
+.module-color-white { background-color: $white; color: $black; }
+.module-color-smoke { background-color: $grey; color: $black; }
+.module-color-charcoal { background-color: $black; color: $white; }
 
-.module-pad-small { @include columnWidth(0.25, padding-top); @include columnWidth(0.25, padding-bottom); }
-.module-pad-medium { @include columnWidth(0.5, padding-top); @include columnWidth(0.5, padding-bottom); }
-.module-pad-large { @include columnWidth(0.75, padding-top); @include columnWidth(0.75, padding-bottom); }
+.module-fontsize-small { font-size: 0.85em; }
+.module-fontsize-normal { font-size: 1em; }
+.module-fontsize-large { font-size: 1.25em; }
 
 @media (max-width: 660px) {
   .module {
