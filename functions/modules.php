@@ -13,7 +13,7 @@
       }
     } elseif($return == 'style') {
       $pad = get_sub_field('module_padding');
-      $output .= ' padding-top: ' . $pad . 'vw; padding-bottom: ' . $pad . 'vw;';
+      $output .= ' padding-top: ' . $pad['top'] . 'vw; padding-bottom: ' . $pad['bottom'] . 'vw;';
     }
     return $output;
   }

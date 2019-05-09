@@ -17,6 +17,8 @@
 							get_template_part('modules/single');
 						} elseif(get_row_layout() == 'two_column') {
 							get_template_part('modules/twocol');
+						} elseif(get_row_layout() == 'table') {
+							get_template_part('modules/table');
 						}
 					echo '</div></section>';
 				endwhile;

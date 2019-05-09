@@ -1,0 +1,30 @@
+.module-table {
+  &.module-color-charcoal .table-wrap td,
+  &.module-color-charcoal .table-wrap th { border-color: $grey; }
+}
+
+.table-heading {
+  text-align: center;
+}
+
+.table-wrap {
+  margin: 0 auto;
+  max-width: 100%;
+
+  td {
+    border: 1px solid $black;
+    padding: 0.5em 1em;
+  }
+
+  th {
+    padding: 1.15em;
+    font-size: 0.85em;
+    opacity: 0.75;
+    @include fontBold();
+    border-bottom: 3px solid $black;
+  }
+}
+
+.table-caption {
+  padding-bottom: 2em;
+}
