@@ -30,6 +30,7 @@
     "wpackagist-plugin/admin-menu-editor": "*",
     "wpackagist-plugin/contact-form-7": "*",
     "wpackagist-plugin/wp-sweep": "*",
+    "wpackagist-plugin/advanced-custom-fields-table-field": "*",
     "advanced-custom-fields/advanced-custom-fields-pro": "*"
   }
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "423dc9635898f4fee03910bbd47f0821",
+    "content-hash": "3117f8d647f799f7852a63ebb6d68adb",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -325,6 +325,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/admin-menu-editor/"
+        },
+        {
+            "name": "wpackagist-plugin/advanced-custom-fields-table-field",
+            "version": "1.3.5",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/advanced-custom-fields-table-field/",
+                "reference": "tags/1.3.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields-table-field.1.3.5.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/advanced-custom-fields-table-field/"
         },
         {
             "name": "wpackagist-plugin/ari-adminer",
