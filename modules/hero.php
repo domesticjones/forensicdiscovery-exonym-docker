@@ -1,16 +1,15 @@
 <?php
+  $minHeight = get_sub_field('slides_height') . 'vh;';
   if(have_rows('hero_slider')):
     echo '<div class="hero-slide-wrap">';
     while(have_rows('hero_slider')): the_row();
-      echo '<div class="hero-slide">';
+      echo '<div class="hero-slide ' . ex_module_footnote('check') . '" style="min-height: ' . $minHeight . '; ' . ex_module_settings('style') . '">';
   $bg = get_sub_field('background');
   $darken = get_sub_field('darken_image') / 100;
   $heading = get_sub_field('heading');
   $headingSub = get_sub_field('sub_heading');
   $columnLeft = get_sub_field('left_column');
   $columnRight = get_sub_field('right_column');
-  $footColor = get_sub_field('footnote_color_module_color');
-  $footnote = get_sub_field('footnote');
 ?>
 <?php if($bg): ?>
   <div class="module-bg" style="background-image: url(<?php echo $bg['sizes']['jumbo']; ?>); opacity: <?php echo $darken; ?>;">
@@ -30,8 +29,7 @@
   </div>
 <?php endif; ?>
 <?php
-  if($footnote) { echo '<div class="hero-footnote hero-footnote-color-' . $footColor . '">' . $footnote . '</div>'; }
-    echo '</div>';
+    echo ex_module_footnote('content') . '</div>';
   endwhile;
   echo '</div>';
 endif;

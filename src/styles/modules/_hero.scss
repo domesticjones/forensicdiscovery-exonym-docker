@@ -13,12 +13,14 @@
 
 .hero-heading {
   margin-bottom: 1em;
-  margin-top: auto;
 }
 
 .hero-slide {
-  @include columnWidth(1, padding);
+  @include columnWidth(1, padding-left);
+  @include columnWidth(1, padding-right);
   @include columnWidth(10, max-width);
+  @include grid(center, center, column);
+  display: flex !important;
 }
 
 .hero-columns {
@@ -68,49 +70,6 @@
   text-align: left;
 }
 
-.hero-footnote {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  background-color: $orange;
-  font-size: 0.75em;
-  padding: 2em;
-  transform: translateX(-50%);
-  margin-top: auto;
-
-  &::before,
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    height: calc(100% + 1px);
-    width: 5em;
-    background-color: $orange;
-  }
-
-  &::before {
-    right: calc(100% - 1px);
-    clip-path: polygon(100% 100%, 100% 0, 0 100%);
-  }
-
-  &::after {
-    left: calc(100% - 1px);
-    clip-path: polygon(100% 100%, 0 0, 0 100%);
-  }
-
-  &-color-white { background-color: $white; color: $black; &::before, &::after { background-color: $white; }}
-  &-color-smoke { background-color: $grey; color: $black; &::before, &::after { background-color: $grey; }}
-  &-color-charcoal { background-color: $black; color: $white; &::before, &::after { background-color: $black; }}
-}
-
-@media (max-width: 1280px) {
-
-  .hero-footnote {
-    width: 100%;
-  }
-}
-
 @media (max-width: 768px) {
   .slick-track {
     display: block;
@@ -119,9 +78,7 @@
   .hero-slide {
     @include grid(center, center, column);
     display: flex !important;
-    padding-bottom: 0;
     max-width: 100%;
-    min-height: calc(100vh - 4em);
 
     .module-bg {
       transform: none !important;
@@ -130,11 +87,6 @@
 
   .hero-heading {
     margin-bottom: auto;
-  }
-
-  .hero-footnote {
-    position: relative;
-    margin-top: 2em;
   }
 }
 
@@ -150,6 +102,7 @@
 
   .hero-slide {
     font-size: 0.85em;
+    padding: 4em;
   }
 
   .hero-column-left,

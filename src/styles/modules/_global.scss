@@ -34,8 +34,50 @@
 .module-fontsize-normal { font-size: 1em; }
 .module-fontsize-large { font-size: 1.25em; }
 
-@media (max-width: 660px) {
-  .module {
-    padding: 3em 0 !important;
+.module-footnote {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  background-color: $orange;
+  font-size: 1rem;
+  padding: 1.5em;
+  transform: translateX(-50%);
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    height: calc(100% + 1px);
+    width: 5em;
+    background-color: $orange;
+  }
+
+  &::before {
+    right: calc(100% - 1px);
+    clip-path: polygon(100% 100%, 100% 0, 0 100%);
+  }
+
+  &::after {
+    left: calc(100% - 1px);
+    clip-path: polygon(100% 100%, 0 0, 0 100%);
+  }
+
+  &-color-white { background-color: $white; color: $black; &::before, &::after { background-color: $white; }}
+  &-color-smoke { background-color: $grey; color: $black; &::before, &::after { background-color: $grey; }}
+  &-color-charcoal { background-color: $black; color: $white; &::before, &::after { background-color: $black; }}
+}
+
+@media (max-width: 1280px) {
+  .module-footnote {
+    position: relative;
+    text-align: center;
+    max-width: 70vw;
+    margin-top: 4em;
+  }
+
+  .module-footnote-present {
+    padding-bottom: 0 !important;
   }
 }
