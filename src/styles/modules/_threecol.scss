@@ -1,0 +1,53 @@
+.module-three_column {
+  .wrap {
+    @include grid(center, stretch);
+  }
+}
+
+.threecol-left {
+  padding-right: 3em;
+  text-align: right;
+}
+
+.threecol-middle {
+  padding: 0 3em;
+  text-align: center;
+}
+
+.threecol-right {
+  padding-left: 3em;
+}
+
+@media (max-width: 1024px) {
+  .threecol-left {
+    padding-right: 2em;
+  }
+
+  .threecol-middle {
+    padding: 0 2em;
+  }
+
+  .threecol-right {
+    padding-left: 2em;
+  }
+}
+
+@media (max-width: 960px) {
+  .module-three_column .wrap {
+    @include grid(center, center, column);
+
+    hr {
+      width: 100%;
+      height: 1px;
+      margin-bottom: 2em;
+    }
+  }
+
+  .threecol-left,
+  .threecol-middle,
+  .threecol-right {
+    width: 100% !important;
+    text-align: left;
+    padding: 0;
+  }
+}

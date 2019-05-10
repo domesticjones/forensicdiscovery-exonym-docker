@@ -2,18 +2,18 @@
   .wrap {
     @include grid(center, stretch);
   }
-
-  hr.column-rule-vert {
-    display: block;
-    width: 1px;
-    border: none;
-    margin: 0;
-  }
-
-  &.module-color-white hr.column-rule-vert { background-color: $black; }
-  &.module-color-smoke hr.column-rule-vert { background-color: $black; }
-  &.module-color-charcoal hr.column-rule-vert { background-color: $grey; }
 }
+
+hr.column-rule-vert {
+  display: block;
+  width: 1px;
+  border: none;
+  margin: 0;
+}
+
+.module-color-white hr.column-rule-vert { background-color: $black; }
+.module-color-smoke hr.column-rule-vert { background-color: $black; }
+.module-color-charcoal hr.column-rule-vert { background-color: $grey; }
 
 .twocol-left,
 .twocol-right {
