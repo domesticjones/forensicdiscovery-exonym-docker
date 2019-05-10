@@ -1,4 +1,4 @@
-			<?php if(!get_page_template('page-contact.php')): ?>
+			<?php if(is_page_template() != 'page-contact.php'): ?>
 				<footer id="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 					<div class="wrap">
 						<section class="footer-left">

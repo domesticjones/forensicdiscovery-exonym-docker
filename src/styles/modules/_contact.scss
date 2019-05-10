@@ -1,0 +1,100 @@
+.page-template-page-contact {
+  background-color: $black;
+  color: black;
+  padding: 0;
+}
+
+.page-contact {
+  @include grid(center, center, column);
+  min-height: 100vh;
+  padding: 7.5em 0;
+  color: $white;
+
+  a {
+    color: $white;
+  }
+}
+
+.contact-data {
+  @include listStripped();
+  @include grid(center, flex-start);
+  @include columnWidth(8);
+  text-align: center;
+  padding-bottom: 2em;
+  margin-bottom: 4em;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    @include columnWidth(1);
+    height: 1px;
+    background-color: $grey;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    @include columnWidth(-0.5, margin-left);
+  }
+
+  & > li {
+    width: 33.333%;
+    padding: 2em;
+  }
+
+  ul {
+    @include listStripped();
+  }
+
+  a {
+    color: $white;
+  }
+
+  span {
+    display: block;
+  }
+
+  .name {
+    font-size: 0.75em;
+  }
+
+  .data {
+    color: $orange;
+    @include fontBold();
+  }
+}
+
+.contact-subhead {
+  font-size: 1.5em;
+}
+
+@media (max-width: 1280px) {
+  .contact-data {
+    @include columnWidth(12);
+  }
+}
+
+@media (max-width: 1024px) {
+  .contact-data {
+    @include grid(flex-start, center, column);
+
+    & > li {
+      width: 50%;
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .page-contact {
+    padding: 6em 2em;
+  }
+}
+
+@media (max-width: 660px) {
+  .contact-data {
+    @include grid(center, center, row, wrap);
+
+    & > li {
+      width: 100%;
+    }
+  }
+}
